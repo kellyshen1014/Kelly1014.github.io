@@ -1,6 +1,6 @@
 ---
 title: "China's two-child policy: a rule, not a pill"
-author: "Kelly Shen & Jinghan Gao"
+author: "Group 20 Kelly Shen & Jinghan Gao"
 date: "12.20.2018"
 output:
   html_document:
