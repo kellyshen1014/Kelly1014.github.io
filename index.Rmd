@@ -1,6 +1,6 @@
 ---
 title: "China's two-child policy: a rule, not a pill"
-author: "Group 20 Kelly Shen & Jinghan Gao"
+author: "Kelly Shen & Jinghan Gao"
 date: "12.20.2018"
 output:
   html_document:
@@ -93,10 +93,10 @@ changerate <- new %>%
     )
 ```
 
-  “Please have another baby.” China is “sending out” the message for couples after long decades of restricting families to just one child. As the most populous country in the world, China had been implemented its famous one-child policy since 1979, and the purpose was to make sure population growth did not outpace economic development. While effectively maintaining a low population growth, after 36 years of implementation, it also brings some salient problems such as an ageing population and a shrinking workforce. So in 2014, government announced that the one-child policy had finally been replaced by a universal two-child policy.^[Zeng, Yi and Therese Hesketh. “The effects of China's universal two-child policy” Lancet (London, England) vol. 388,10054 (2016): 1930-1938. (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5944611/] However, the release of the new policy seemed to be not hugely welcomed by its people. 
+  “Please have another baby.” China is “sending out” the message for couples after long decades of restricting families to just one child. As the most populous country in the world, China had been implemented its famous one-child policy since 1979, and the purpose was to make sure population growth did not outpace economic development. While effectively maintaining a low population growth, after 36 years of implementation, it also brings some salient problems such as an ageing population and a shrinking workforce. So in 2014, government announced that the one-child policy had been replaced by a universal two-child policy.^[Zeng, Yi and Therese Hesketh. “The effects of China's universal two-child policy” Lancet (London, England) vol. 388,10054 (2016): 1930-1938. (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5944611/] However, the release of the new policy seemed to be not hugely welcomed by its people. 
   
 
-  By exploring population datasets from National Bureau of Statistics of China and combining it with the Chinese administrative boundary shapefile from The Humanitarian Data Exchange, we are trying to examine the effectiveness of the new two child policy and the social reasons behind its unexpected outcome. The following static map was based on the data of annual birth rate of China which displays the change of birth rate in each province from 2014 to 2016. The color palette represents the degree of the change: we can see that despite the policy incentives, most of the areas are under blue, indicating that the operation of two child policy does not make a great difference to most of the provinces in China. Southern Provinces such as Guangdong and Henan outperformed the northern areas in China as they have relatively larger populations. One noticeable area is Shandong province, which is the only red place on the map, and its birth rate increased more than 50 percent over the past three years. According to the China Daily news, as Shandong had implemented strict family planning before, so its great potential may be unleashed after relaxation of the one-child policy.^[Hong, Meng. “Shandong Couples Most Willing to Have Second Child, Statistics Show.” China News Service Website - Headlines, Stories, Photos and Videos, (www.ecns.cn/cns-wire/2017/04-26/255102.shtml.]
+  By exploring population datasets from National Bureau of Statistics of China and combining it with the Chinese administrative boundary shapefile from The Humanitarian Data Exchange, we are trying to examine the effectiveness of the new two child policy and the social reasons behind its unexpected outcome. The following static map displays the change of annual birth rate in each province from 2014 to 2016. The color palette represents the degree of the change: we can see that despite the policy incentives, most of the areas are under blue, indicating that the operation of two child policy does not make a great difference to most of the provinces in China. Southern Provinces such as Guangdong and Henan outperformed the northern areas in China as they have relatively larger populations. One noticeable area is Shandong province, which is the only red place on the map where the birth rate increased more than 50 percent over the past three years. According to the China Daily news, as Shandong had implemented strict family planning before, so its great potential may be unleashed after relaxation of the one-child policy.^[Hong, Meng. “Shandong Couples Most Willing to Have Second Child, Statistics Show.” China News Service Website - Headlines, Stories, Photos and Videos, (www.ecns.cn/cns-wire/2017/04-26/255102.shtml.]
 
 
 ```{r, message=FALSE, warning = FALSE}
@@ -107,7 +107,7 @@ changerate <- new %>%
 pal <- wes_palette("Zissou1", 50, type = "continuous")
 ggplot(changerate) +
   geom_sf(aes(fill = change_in_birth_rate))+
-  #adopt the gradient color
+  #adopt the gradient color 
   scale_fill_gradientn(colours = pal)+
   #I use the text_repel package to avoid the overlapping labels
   geom_text_repel(data = changerate, 
